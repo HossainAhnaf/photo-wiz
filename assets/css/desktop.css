@@ -1,0 +1,571 @@
+@media screen and (min-width: 750px) {
+ 
+ 
+  .app .app-nav{
+    width: calc(100% - 40px);
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .app .app-nav > .desktop-top-toolbar{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;    
+  }
+  
+.app .app-nav .desktop-top-toolbar.active{
+  display: flex;
+  }
+  
+  .app .app-nav > .desktop-top-toolbar > button{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+   padding: 4px 15px;
+   cursor: pointer;
+   border: none;
+   gap: 4px;
+   border-radius: 5px;
+  font-weight: bold;
+  background-color: lightgray;
+  }
+  .app .app-nav > .desktop-top-toolbar > button:hover{
+    filter: brightness(0.9);
+  }
+  .app .app-nav > .desktop-top-toolbar > button:active{
+    filter: brightness(0.7); 
+  }
+  
+  .app .app-nav > .desktop-top-toolbar > .download-button{
+     padding:  10px 15px;
+      background: var(--background-primary-gradient);
+     background-color: var(--color-primary);
+     color: white;
+  }
+  
+  .app .app-nav > .desktop-top-toolbar > .change-image-button > svg{ 
+    width: 30px;
+    height: 30px;
+  }
+  .app .app-nav > .desktop-top-toolbar > .download-button > svg{ 
+    width: 18px;
+    height: 18px;
+  }
+  
+  .app .main{
+      width: 100vw;
+      height:calc(100vh - 54px);
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .app .main :is(.mobile-top-toolbar,.mobile-top-toolbar.active){
+     display: none;
+    }
+
+    .app .preview   {
+      width: 100%;
+      height:calc(100% - 80px);
+    }
+    .app .preview .no-image-content  .open-image-label{
+      cursor: pointer;
+    }
+  
+    .app .preview .no-image-content  .open-image-label:is(.dragover,:hover){
+        background-color: var(--color-primary-tint);
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+  
+    }
+    .app .preview .no-image-content  .open-image-label .desktop-text {
+      display: block;
+      font-size: 20px;
+    }
+      .app .preview .no-image-content  .open-image-label .mobile-text {
+     display: none;
+      }
+    
+      .app .preview .no-image-content .open-image-label > .open-image-icon {
+     width: 150px;
+     height: 150px;
+      }
+  
+      .app .editor{
+        width: 80px;
+        height: 100%;
+        flex-direction: row-reverse;
+        position: relative;
+        transition: width 0.5s;
+        justify-content: flex-end;
+        align-items: flex-start;
+  
+      }
+      .app .editor.active{
+        width: min(600px,70%);
+      }
+      .app .editor .open-content-button{
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -15px;
+        z-index: 1;
+        padding: 40px 0;
+        border-radius: 0 11px 11px 0;
+        border: none ;
+        cursor: pointer;
+        background-color: var(--layout-bg-color);
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+      }
+ 
+      .app .editor .open-content-button .icon{
+       width: 15px;
+       height: 15px;
+       transform: rotate(270deg);
+      }
+
+      .app .editor.active .open-content-button .icon{
+        transform: rotate(90deg);
+       }
+   
+  
+      /* content */
+  
+      .app .editor .content {
+        width: 0;
+        height: calc(100% - 25px);
+       justify-content: flex-start;
+       box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.5);
+       background-color: whitesmoke;
+       transition: width 0.5s;
+       overflow: hidden;
+      }
+      .app .editor.active .content.active{
+        width: 100%;
+       overflow-y: scroll;
+  
+       }
+    .app .editor  .content > .secondary {
+       display: none;
+      }  
+      .app .editor .content .desktop-apply-cancel-buttons-wrapper{
+        display: none;
+        flex-direction: row;
+        gap: 15px;
+        width: 90%;
+        margin: 20px auto;
+      }
+      .app .editor .content.updated .desktop-apply-cancel-buttons-wrapper{
+       display: flex;
+      }
+      .app .editor .content .desktop-apply-cancel-buttons-wrapper > button{
+        padding: 10px 18px;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+       cursor: pointer;
+       background-color: gray;
+       color: white;
+      font-weight: bold;
+      }
+      .app .editor .content .desktop-apply-cancel-buttons-wrapper > button:hover{
+       filter: brightness(0.9);
+      } 
+      .app .editor .content .desktop-apply-cancel-buttons-wrapper > button:active{
+        filter: brightness(0.7);
+       } 
+      .app .editor .content .desktop-apply-cancel-buttons-wrapper > button.apply-button{
+        background: var(--background-primary-gradient);
+        background-color:var(--color-primary);
+
+      }
+  
+      /* adjust */
+      .app .editor   .content[name="adjust"] > .primary{
+       display: none;
+      }
+    .app .editor   .content[name="adjust"] > .desktop{
+       display: flex;
+       flex-direction: column;
+       width: 90%;
+       gap: 20px;
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter{
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       gap: 4px;
+  
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter .heading{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+       gap: 8px;
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter .heading .name-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+        gap: 6px;
+      }  
+    .app .editor   .content[name="adjust"] > .desktop .filter .heading .name-wrapper .icon{
+       width: 20px;
+       height: 20px;
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter .heading .value-input {
+       width: 50px;
+       padding: 4px;
+       border-radius: 4px;
+       text-align: right;
+       outline: none;
+        border: 1px solid gray;
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter .heading .value-input:read-only {
+       background-color: transparent;
+       border-color: transparent ;
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter .heading .value-input:read-only:hover {
+       background-color: rgb(209, 209, 209)
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter .range-wrapper{
+        width: 100%;
+      }
+    .app .editor   .content[name="adjust"] > .desktop .filter  .range-wrapper input[type="range"]{
+       width: 100%;
+      }
+  
+    /* crop */
+    .app .editor .content[name="crop"] .desktop-custom-size-controler{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .app .editor .content[name="crop"] .desktop-custom-size-controler .primary{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .app .editor   .content[name="crop"] .desktop-custom-size-controler .primary > input{
+     width: 40%;
+     padding: 5px 8px;
+     text-align: center;
+     outline: none;
+     border: 1px solid gray;
+     border-radius: 4px;
+    }
+    .app .editor .content[name="crop"] .desktop-custom-size-controler .primary > input:focus{
+      border-color: var(--color-primary);
+     }
+     .app .editor .content[name="crop"] .desktop-custom-size-controler .primary > input.invalid{
+      border-color: red;
+     }
+
+     .app .editor .content[name="crop"] .desktop-custom-size-controler .primary > .swap-button{
+      cursor: pointer;
+      background-color: var(--layout-bg-color);
+      border: none;
+      padding: 5px;
+      border-radius: 4px;
+    }
+    .app .editor .content[name="crop"] .desktop-custom-size-controler .primary > .swap-button > svg{
+     width: 100%;
+     height: 100%;
+    }
+  
+    .app .editor .content[name="crop"] .desktop-custom-size-controler .primary > .swap-button:hover{
+      filter: brightness(0.9);
+    }
+    .app .editor .content[name="crop"] .desktop-custom-size-controler .primary > .swap-button:active{
+      color: var(--color-primary);
+    }
+  
+    .app .editor .content[name="crop"] .desktop-custom-size-controler .primary > .swap-button{
+     width: 30px;
+     height: 30px;
+    }
+    .app .editor .content[name="crop"] .desktop-custom-size-controler .message{
+      color: red;
+    }
+    .app .editor   .content[name="crop"] .scroller{
+      overflow: visible;
+      height: max-content;
+    }
+  .app .editor .content[name="crop"] .crop-sizes-wrapper{
+    width: 90%;
+    min-width: unset;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin: 0 auto;
+    }
+  .app .editor   .content[name="crop"] .crop-sizes-wrapper > button{
+      background-color: white;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid transparent
+    }
+  .app .editor   .content[name="crop"] .secondary-crop-sizes-wrapper{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 10px auto;
+    }
+  .app .editor   .content[name="crop"] .secondary-crop-sizes-wrapper > button{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      gap: 8px; 
+      padding: 8px;
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+  
+
+    }
+  .app .editor   .content[name="crop"] .secondary-crop-sizes-wrapper > button > span{
+      width: 70%; 
+    }
+  
+  .app .editor   .content[name="crop"] .secondary-crop-sizes-wrapper > button > .icon{
+     width:  30px;
+     height: 30px;
+    }
+  .app .editor   .content[name="crop"] :is(.crop-sizes-wrapper, .secondary-crop-sizes-wrapper ) > button:not(.active):hover{
+      filter: brightness(.9);
+     }
+   .app .editor   .content[name="crop"] :is(.crop-sizes-wrapper, .secondary-crop-sizes-wrapper ) > button.active{
+       color: var(--color-primary);
+       border-color: var(--color-primary);
+     }
+  
+    /* blur */
+  .app .editor   .content[name="blur"] > .primary{
+     display: none;
+     }
+     .app .editor   .content[name="blur"] > .desktop{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 90%;
+     }
+     .app .editor   .content[name="blur"] > .desktop > .blur-type-select{
+       display: flex;
+       flex-direction: row;
+     }
+     .app .editor   .content[name="blur"] > .desktop > .blur-type-select > button{
+       background-color: inherit;
+       border: 1px solid gray;
+       width:100% ;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       padding: 8px;
+       cursor: pointer;
+       opacity: .5;
+       transition: background-color,border-color,opacity .3s;
+     }
+     .app .editor   .content[name="blur"] > .desktop > .blur-type-select > button:hover{
+      border-color: var(--color-primary);
+      opacity: 1;
+  
+     }
+  
+     .app .editor   .content[name="blur"] > .desktop > .blur-type-select > button:first-child{
+      border-radius: 7px 0 0 7px;
+      border-right: 0;
+     }
+     .app .editor   .content[name="blur"] > .desktop > .blur-type-select > button:last-child{
+      border-radius: 0 7px 7px 0;
+      border-left: 0;
+     }
+  
+     .app .editor   .content[name="blur"] > .desktop > .blur-type-select > button.active{
+      background:  var(--background-primary-gradient);
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      color: white;
+      opacity: 1;
+  
+     }
+  
+     .app .editor   .content[name="blur"] > .desktop > .blur-type-select > button > .icon{
+     width: 30px;
+     height: 30px;
+     }
+  
+     .app .editor   .content[name="blur"] > .desktop > .blur-control-panel{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+     }
+     .app .editor   .content[name="blur"] > .desktop > .blur-control-panel > .value-wrapper{
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+      justify-content: space-between;
+      align-items: center;
+     }
+     .app .editor   .content[name="blur"] > .desktop > .blur-control-panel > .value-wrapper .value{
+        display: flex;
+        width: 20%;
+        border: 1px solid gray;
+        padding: 4px;
+        cursor: text;     
+      border-radius: 4px;
+       gap: 4px;
+       background-color: white;
+       
+     }
+
+   .app .editor   .content[name="blur"] > .desktop > .blur-control-panel > .value-wrapper .value.readonly {
+    background-color: transparent;
+    border-color: transparent ;
+   }
+ .app .editor   .content[name="blur"] > .desktop > .blur-control-panel > .value-wrapper .value.readonly:hover {
+    background-color: rgb(209, 209, 209) ;
+   }
+     .app .editor   .content[name="blur"] > .desktop > .blur-control-panel > .value-wrapper .value > input{
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: right;
+      background-color: transparent;
+      }
+
+   
+
+      .app .editor   .content[name="blur"] > .desktop > .blur-control-panel > .range-wrapper > input{
+       width: 100%;
+      }
+  
+  
+     /* rotate */
+     .app .editor   .content[name="rotate"] .straighten-control-panel > .header {
+        display: none;
+     }
+     .app .editor   .content[name="rotate"] .straighten-control-panel > .desktop-header {
+       width: 100%;
+        display: flex;
+        align-items: space-between;
+       justify-content: space-between;
+    }
+    .app .editor   .content[name="rotate"] .straighten-control-panel > .desktop-header > .value-input {
+        width: 50px;
+        padding: 4px;
+        border-radius: 4px;
+        text-align: right;
+        outline: none;
+         border: 1px solid gray;        
+        }
+        .app .editor   .content[name="rotate"] .straighten-control-panel > .desktop-header > .value-input:read-only {
+        background-color: transparent;
+        border-color: transparent ;
+       }
+
+     .app .editor   .content[name="rotate"] .straighten-control-panel > .desktop-header > .value-input:read-only:hover {
+        background-color: rgb(209, 209, 209);
+       }
+
+     .app .editor   .content[name="rotate"] .rotate-control-panel{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+    }
+  .app .editor   .content[name="rotate"] .rotate-control-panel .buttons-wrapper{
+     display: grid;
+     grid-template-columns: 1fr 1fr ;
+     gap: 10px;
+    }
+  .app .editor   .content[name="rotate"] .rotate-control-panel .buttons-wrapper > button{
+      background-color: var(--layout-bg-color);
+     border-radius: 6px;
+    }
+    .app .editor   .content[name="rotate"] .rotate-control-panel .buttons-wrapper > button:hover{
+      background-color: var(--color-primary-tint);
+     }
+ /* text */
+
+.app .editor .content[name="text"] > .ql-toolbar{
+  width: 100%;
+  overflow: hidden;
+} 
+.app .editor .content[name="text"] > .ql-toolbar > .ql-formats{
+ width: 100%;
+}
+.app .editor .content[name="text"] > .ql-toolbar:not(.active){
+display: none;
+
+}
+.app .editor .content[name="text"] > .ql-toolbar .ql-picker .ql-picker-options{
+  height: 100%;
+  overflow-y: scroll;
+}
+.app .editor .content[name="text"] > .secondary{
+  display: flex;
+}
+.app .editor .content[name="text"] > .secondary > :not(.add-text-button){
+  display: none;
+ }
+
+.app .editor .content[name="text"] > .secondary > .add-text-button{
+  background: var(--background-primary-gradient);
+ background-color: var(--color-primary);
+ color: white;
+ border: none;
+ border-radius: 20px;
+ padding: 5px;
+ width: 90%;
+ cursor: pointer;
+ font-weight: bold;
+ margin:0 auto;
+
+}
+.app .editor .content[name="text"] > .secondary > .add-text-button:hover{
+ filter: brightness(.9);
+}
+.app .editor .content[name="text"] > .secondary > .add-text-button.active{
+ display: none;
+}
+
+    /* bottom toolbar */
+    .app .editor > .scroller {
+      max-width: 80px;
+  
+     height: 100%;
+     overflow: hidden;
+     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+     z-index: 1;
+    }
+  
+    .app .editor .toolbar {
+      min-height: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      }
+      .app .editor .toolbar > button.active{
+        background-color: var(--color-primary-tint);
+        color: var(--color-primary);
+       } 
+       .app .editor .toolbar > button:hover{
+        color: var(--color-primary);
+       } 
+  }
