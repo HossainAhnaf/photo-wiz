@@ -76,32 +76,44 @@
 .app .main .mobile-top-toolbar.active{
   display: flex;
 }
-.app .main .mobile-top-toolbar > button{
-  border-radius: 100%;
-  border: none;
-  padding:  4px;
+.app .main .mobile-top-toolbar > .group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--layout-bg-color);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  gap: 3px;
+  overflow: hidden;
 }
-.app .main .mobile-top-toolbar > button:active{
+
+.app .main .mobile-top-toolbar   button{
+  border: none;
+  background-color: inherit;
+
+}
+.app .main .mobile-top-toolbar   button:active{
  filter: brightness(0.7);
 }
 
-.app .main .mobile-top-toolbar > .change-image-button > svg{
+
+.app .main .mobile-top-toolbar button > svg{
   width: 30px;
   height: 30px;
 }
-.app .main .mobile-top-toolbar > .download-button{
+.app .main .mobile-top-toolbar   .download-button{
   background: var(--background-primary-gradient);
   background-color: var(--color-primary);
   color: white;
-  padding:8px;
-
+  border-radius: 100%;
+  padding: 4px;
 }
-.app .main .mobile-top-toolbar > .download-button > svg{
+.app .main .mobile-top-toolbar   .download-button > svg{
   width: 18px;
   height: 18px;
 }
-
+.app .main .mobile-top-toolbar > .group{
+}
 .app .main .mobile-custom-crop-size-popup{
  max-width: 300px;
  width: 90%;
