@@ -1,19 +1,8 @@
 import initEditor from "./initEditor/index.js"
-export let isMobile = window.innerWidth < 750;
-export let isCanvasBlank = true;
-
-function setTopToolbarVisibility() {
-  const topToolbarSelector = isMobile
-    ? '.mobile-top-toolbar'
-    : '.desktop-top-toolbar';
-  const topToolbar = document.querySelector(topToolbarSelector);
-  if (isCanvasBlank) {
-    topToolbar.classList.remove('active');
-  } else {
-    topToolbar.classList.add('active');
-  }
-}
-
+import initTopToolbar from "./initTopToolbar.js";
+export var isMobile = window.innerWidth < 750;
+export var isCanvasBlank = true;
+var topToolbar;
 function initOpenImageLabel() {
   const openImageLabel = document.querySelector('.open-image-label');
   const canvas = document.getElementById('canvas');
@@ -27,7 +16,7 @@ function initOpenImageLabel() {
     .addEventListener('change', (e) => {
       canvas.classList.add('active');
       isCanvasBlank = false;
-      setTopToolbarVisibility();
+      topToolbar.setVisibility();
     });
 
   function handleDragOver(e) {
@@ -47,7 +36,7 @@ function initOpenImageLabel() {
     const droppedFiles = Array.from(e.dataTransfer.files);
     canvas.classList.add('active');
     isCanvasBlank = false;
-    setTopToolbarVisibility();
+    topToolbar.setVisibility();
   }
 }
 
@@ -55,10 +44,11 @@ function initOpenImageLabel() {
 
 window.addEventListener('resize', () => {
   isMobile = window.innerWidth < 750;
-  setTopToolbarVisibility();
+  topToolbar.setVisibility();
 });
 
 window.addEventListener('load', () => {
   initOpenImageLabel();
   initEditor();
+  topToolbar = initTopToolbar() 
 });
