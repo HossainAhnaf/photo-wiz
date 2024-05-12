@@ -1,8 +1,11 @@
 import initEditor from "./initEditor/index.js"
+import initLayerControlPanel from "./initLayerControlPanel.js";
 import initTopToolbar from "./initTopToolbar.js";
 export var isMobile = window.innerWidth < 750;
 export var isCanvasBlank = true;
-var topToolbar;
+export var layerControlPanel = null;
+var topToolbar = null;
+
 function initOpenImageLabel() {
   const openImageLabel = document.querySelector('.open-image-label');
   const canvas = document.getElementById('canvas');
@@ -50,5 +53,6 @@ window.addEventListener('resize', () => {
 window.addEventListener('load', () => {
   initOpenImageLabel();
   initEditor();
+  layerControlPanel = initLayerControlPanel()
   topToolbar = initTopToolbar() 
 });

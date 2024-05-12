@@ -63,6 +63,13 @@
   display: flex;
   flex-direction: column;
 }
+/* layer control pannel*/
+.layer-control-panel{
+ width: 90%;
+ height: 90%;
+ background-color: var(--layout-bg-color);
+}
+
 .app .main .mobile-top-toolbar{
   width: calc(100% - 20px);
   padding: 5px 10px;
@@ -112,8 +119,7 @@
   width: 18px;
   height: 18px;
 }
-.app .main .mobile-top-toolbar > .group{
-}
+
 .app .main .mobile-custom-crop-size-popup{
  max-width: 300px;
  width: 90%;

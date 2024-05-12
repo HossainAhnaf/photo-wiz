@@ -4,7 +4,8 @@ function changeCanvasImage(file){
  const fileReader = new FileReader()
  fileReader.readAsDataURL(file)
  fileReader.onload = (e)=>{
- }
+  const src = e.target.result
+}
 }
 
 function changeImageButtonClickHandler (){
@@ -17,7 +18,9 @@ function changeImageButtonClickHandler (){
   fileInput.onchange = ()=> changeCanvasImage(fileInput.files[0])
 
 }
-
+function layerButtonClickHandler(){
+ 
+}
 export default function initTopToolbar(){
     const mobileTopToolbar = document.querySelector(".app > .main > .mobile-top-toolbar ")
     const changeImageButton = mobileTopToolbar.querySelector(".change-image-button")
@@ -25,7 +28,7 @@ export default function initTopToolbar(){
     const downloadButton = mobileTopToolbar.querySelector(".download-button")
     
     changeImageButton.addEventListener('click',changeImageButtonClickHandler)
-
+    layerButton.addEventListener('click',layerButtonClickHandler)
     function setVisibility() {
         const topToolbarSelector = isMobile
           ? '.mobile-top-toolbar'
