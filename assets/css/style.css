@@ -1,20 +1,21 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-  
+
 :root {
   --background-primary-gradient: linear-gradient(-150deg, rgba(255, 0, 0, 0.534) 15%, rgba(255, 68, 0, 0.548) 70%, rgba(255, 166, 0, 0.534) 94%);
-  --layout-bg-color:whitesmoke;
+  --layout-bg-color: whitesmoke;
   --color-primary: #FF9873;
-  --color-primary-tint:#fff5f1;
+  --color-primary-tint: #fff5f1;
 }
 
-.scroller{
+.scroller {
   overflow: scroll;
   width: 100%;
 }
-.blur-bg{
+
+.blur-bg {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -26,11 +27,12 @@
   align-items: center;
   justify-content: center;
 }
-.blur-bg.active{
+
+.blur-bg.active {
   display: flex;
 }
 
-.app{
+.app {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -39,7 +41,7 @@
   justify-content: center;
 }
 
-.app .app-nav{
+.app .app-nav {
   width: 100%;
   background-color: var(--layout-bg-color);
   display: flex;
@@ -52,25 +54,73 @@
   z-index: 100;
 }
 
-.app .app-nav .desktop-top-toolbar{
-  display: none ;
-  }
+.app .app-nav .desktop-top-toolbar {
+  display: none;
+}
 
-  
-.app .main{
+
+.app .main {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 /* layer control pannel*/
-.layer-control-panel{
- width: 90%;
- height: 90%;
- background-color: var(--layout-bg-color);
+.layer-control-panel {
+  width: 90%;
+  height: 20%;
+  max-width: 300px;
+  min-height: 300px;
+  background-color: var(--layout-bg-color);
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
-.app .main .mobile-top-toolbar{
+.layer-control-panel>.header {
+  height: calc(10% - 40px);
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  font-size: 20px;
+}
+.layer-control-panel > .header .close-button{
+  width: 30px;
+  height: 30px;
+}
+.layer-control-panel>.layer-images-wrapper {
+  width: 100%;
+  height: 75%;
+  /* background-color: blue; */
+  border-bottom: 1px solid lightgray;
+}
+
+.layer-control-panel>.add-layer-button-wrapper {
+  /* background-color: black; */
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layer-control-panel>.add-layer-button-wrapper > .add-layer-button{
+  background: var(--background-primary-gradient);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 20px;
+  padding: 7px 18px; 
+  width: 50%;
+  color: white;
+  font-weight: bold;
+}
+.layer-control-panel>.add-layer-button-wrapper > .add-layer-button:active{
+ filter: brightness(.7);
+}
+/*  mobile top toolbar */
+.app .main .mobile-top-toolbar {
   width: calc(100% - 20px);
   padding: 5px 10px;
   background-color: transparent;
@@ -78,12 +128,14 @@
   display: none;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
 }
-.app .main .mobile-top-toolbar.active{
+
+.app .main .mobile-top-toolbar.active {
   display: flex;
 }
-.app .main .mobile-top-toolbar > .group{
+
+.app .main .mobile-top-toolbar>.group {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,57 +146,63 @@
   overflow: hidden;
 }
 
-.app .main .mobile-top-toolbar   button{
+.app .main .mobile-top-toolbar button {
   border: none;
   background-color: inherit;
 
 }
-.app .main .mobile-top-toolbar   button:active{
- filter: brightness(0.7);
+
+.app .main .mobile-top-toolbar button:active {
+  filter: brightness(0.7);
 }
 
 
-.app .main .mobile-top-toolbar button > svg{
+.app .main .mobile-top-toolbar button>svg {
   width: 30px;
   height: 30px;
 }
-.app .main .mobile-top-toolbar   .download-button{
+
+.app .main .mobile-top-toolbar .download-button {
   background: var(--background-primary-gradient);
   background-color: var(--color-primary);
   color: white;
   border-radius: 100%;
   padding: 4px;
 }
-.app .main .mobile-top-toolbar   .download-button > svg{
+
+.app .main .mobile-top-toolbar .download-button>svg {
   width: 18px;
   height: 18px;
 }
 
-.app .main .mobile-custom-crop-size-popup{
- max-width: 300px;
- width: 90%;
- background-color: var(--layout-bg-color);
- padding: 13px 8px;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- gap: 10px;
+.app .main .mobile-custom-crop-size-popup {
+  max-width: 300px;
+  width: 90%;
+  background-color: var(--layout-bg-color);
+  padding: 13px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border-radius: 10px;
 }
-.app .main .mobile-custom-crop-size-popup > .title{
- font-size: 24px;
- width: 80%;
- font-weight:500;
+
+.app .main .mobile-custom-crop-size-popup>.title {
+  font-size: 24px;
+  width: 80%;
+  font-weight: 500;
 }
-.app .main .mobile-custom-crop-size-popup > .size-fields-wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;    
+
+.app .main .mobile-custom-crop-size-popup>.size-fields-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.app .main .mobile-custom-crop-size-popup > .size-fields-wrapper > input{
+
+.app .main .mobile-custom-crop-size-popup>.size-fields-wrapper>input {
   width: 60px;
   padding: 10px;
   border: 1px solid lightgray;
@@ -153,38 +211,42 @@
   text-align: center;
   outline: none;
 }
-.app .main .mobile-custom-crop-size-popup > .size-fields-wrapper > input:focus{
-    border-color: var(--color-primary)
-  }
-  .app .main .mobile-custom-crop-size-popup > .size-fields-wrapper > input.invalid{
-    border-color: red;
-  }
-  
-.app .main .mobile-custom-crop-size-popup > .size-fields-wrapper > .swap-button{
- display: flex;
- align-items: center;
- justify-content: center;
- padding: 10px;
- background-color: var(--layout-bg-color);
- border: none;
- border-radius: 4px;
-}
-.app .main .mobile-custom-crop-size-popup > .size-fields-wrapper > .swap-button:active{
-  filter: brightness(0.9); 
- background-color: lightgray;
+
+.app .main .mobile-custom-crop-size-popup>.size-fields-wrapper>input:focus {
+  border-color: var(--color-primary)
 }
 
-.app .main .mobile-custom-crop-size-popup > .size-fields-wrapper > .swap-button > svg{
- width: 16px;
- height: 16px;
+.app .main .mobile-custom-crop-size-popup>.size-fields-wrapper>input.invalid {
+  border-color: red;
 }
-.app .main .mobile-custom-crop-size-popup > .message{
+
+.app .main .mobile-custom-crop-size-popup>.size-fields-wrapper>.swap-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: var(--layout-bg-color);
+  border: none;
+  border-radius: 4px;
+}
+
+.app .main .mobile-custom-crop-size-popup>.size-fields-wrapper>.swap-button:active {
+  filter: brightness(0.9);
+  background-color: lightgray;
+}
+
+.app .main .mobile-custom-crop-size-popup>.size-fields-wrapper>.swap-button>svg {
+  width: 16px;
+  height: 16px;
+}
+
+.app .main .mobile-custom-crop-size-popup>.message {
   width: 90%;
   color: red;
   margin-bottom: 7px;
 }
 
-.app .main .mobile-custom-crop-size-popup > .buttons-wrapper{
+.app .main .mobile-custom-crop-size-popup>.buttons-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -192,7 +254,8 @@
   gap: 10px;
   width: 70%;
 }
-.app .main .mobile-custom-crop-size-popup > .buttons-wrapper > button{
+
+.app .main .mobile-custom-crop-size-popup>.buttons-wrapper>button {
   width: 100%;
   padding: 10px;
   border: none;
@@ -202,192 +265,217 @@
   color: white;
 
 }
-.app .main .mobile-custom-crop-size-popup > .buttons-wrapper > button:active{
+
+.app .main .mobile-custom-crop-size-popup>.buttons-wrapper>button:active {
   filter: brightness(0.5);
 }
 
-.app .main .mobile-custom-crop-size-popup > .buttons-wrapper > button.apply-button{
+.app .main .mobile-custom-crop-size-popup>.buttons-wrapper>button.apply-button {
   background: var(--background-primary-gradient);
   background-color: var(--color-primary);
 }
 
 
-.app .preview   {
+.app .preview {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  height:calc(60% - 80px);
+  height: calc(60% - 80px);
   padding: 40px 0;
-} 
-.app .preview #canvas{
-width: 100%;
-height: 100%;
-display: none;
 }
-.app .preview #canvas.active{
- display: block;
+
+.app .preview #canvas {
+  width: 100%;
+  height: 100%;
+  display: none;
 }
-.app .preview #canvas.active + .no-image-content{
+
+.app .preview #canvas.active {
+  display: block;
+}
+
+.app .preview #canvas.active+.no-image-content {
   display: none;
 }
 
 .app .preview .no-image-content {
-width: 100%;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-  .app .preview .no-image-content  .open-image-label {
-     border: 2px dashed black;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     padding: 20px 50px;
-    width: calc(90% - 100px);
-    max-width: 700px;
-    max-height: 600px;
 
-    height: 90%;
-    border-radius: 10px;
-  }
-  .app .preview .no-image-content  .open-image-label:active {
-    background-color: var(--color-primary-tint);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-  .app .preview .no-image-content  .open-image-label.dragenter {
-    background-color: var(--color-primary-tint);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-  .app .preview .no-image-content  .open-image-label .desktop-text {
-    display: none;
-  }
+.app .preview .no-image-content .open-image-label {
+  border: 2px dashed black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px;
+  width: calc(90% - 100px);
+  max-width: 700px;
+  max-height: 600px;
 
-  .app .preview .no-image-content .open-image-label > .open-image-icon {
- width: 100px;
- height: 100px;
-  }
+  height: 90%;
+  border-radius: 10px;
+}
 
-  .app .editor{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  .app .editor .open-content-button{
-    display: none;
-  }
-  /* content */
-  .app .editor .content {
-   width: 100%;
-   padding: 20px 0 5px 0;
-   display: none;
-   flex-direction: column;
-   align-items: center;
-   justify-content: flex-end;
-   background-color: whitesmoke;
-   gap: 10px;
-   box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
-  }  
-  .app .editor .content.active{
-   display: flex;
-  }
+.app .preview .no-image-content .open-image-label:active {
+  background-color: var(--color-primary-tint);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
 
-  .app .editor .content .desktop{
-    display: none;
-  }
-  .app .editor .content .desktop-apply-cancel-buttons-wrapper{
-    display: none;
-   }
-   .app .editor .content > .secondary{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    color: black;
-  }
-   .app .editor .content > .secondary .icon{
-    width: 30px;
-    height: 30px;
-    background-color: inherit;
-    cursor: pointer;
-  }
-   .app .editor .content > .secondary .icon:active{
-    filter: brightness(0.8);
-  }
-  
-  /* adjust */
-   .app .editor .content[name="adjust"] > .primary{
-   width: 90%;
-   display: flex;
-   flex-direction: column;
-   gap: 8px;
-  }
-   .app .editor .content[name="adjust"] > .primary  .selected-adjust-control-panel{
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-  }
-   .app .editor .content[name="adjust"] > .primary  .selected-adjust-control-panel .value-wrapper{
-    display: flex;
-    flex-direction: row;
-     gap: 10px;
-     font-size: 15px;
-     color: black;
-  }
-   .app .editor .content[name="adjust"] > .primary  .selected-adjust-control-panel .range-wrapper > input{
-    width: 100%;
-  }
-   .app .editor .content[name="adjust"] > .primary  .adjust-buttons-wrapper{
-   display: grid;
-   grid-template-columns: repeat(4,1fr);
-   overflow-x: scroll;
-   scrollbar-width: thin;
-   gap: 10px;
-  }
-   .app .editor .content[name="adjust"] > .primary  .adjust-buttons-wrapper > button{
-    background-color: inherit;
-    border: none;
-   color: black;
-    cursor: pointer;    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 3px;
-  }
-   .app .editor .content[name="adjust"] > .primary  .adjust-buttons-wrapper > button.active{
-    color: var(--color-primary);
- 
-  }
-   .app .editor .content[name="adjust"] > .primary  .adjust-buttons-wrapper > button .icon{
+.app .preview .no-image-content .open-image-label.dragenter {
+  background-color: var(--color-primary-tint);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.app .preview .no-image-content .open-image-label .desktop-text {
+  display: none;
+}
+
+.app .preview .no-image-content .open-image-label>.open-image-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.app .editor {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.app .editor .open-content-button {
+  display: none;
+}
+
+/* content */
+.app .editor .content {
+  width: 100%;
+  padding: 20px 0 5px 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: whitesmoke;
+  gap: 10px;
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.app .editor .content.active {
+  display: flex;
+}
+
+.app .editor .content .desktop {
+  display: none;
+}
+
+.app .editor .content .desktop-apply-cancel-buttons-wrapper {
+  display: none;
+}
+
+.app .editor .content>.secondary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  color: black;
+}
+
+.app .editor .content>.secondary .icon {
+  width: 30px;
+  height: 30px;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.app .editor .content>.secondary .icon:active {
+  filter: brightness(0.8);
+}
+
+/* adjust */
+.app .editor .content[name="adjust"]>.primary {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app .editor .content[name="adjust"]>.primary .selected-adjust-control-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.app .editor .content[name="adjust"]>.primary .selected-adjust-control-panel .value-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 15px;
+  color: black;
+}
+
+.app .editor .content[name="adjust"]>.primary .selected-adjust-control-panel .range-wrapper>input {
+  width: 100%;
+}
+
+.app .editor .content[name="adjust"]>.primary .adjust-buttons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  gap: 10px;
+}
+
+.app .editor .content[name="adjust"]>.primary .adjust-buttons-wrapper>button {
+  background-color: inherit;
+  border: none;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 3px;
+}
+
+.app .editor .content[name="adjust"]>.primary .adjust-buttons-wrapper>button.active {
+  color: var(--color-primary);
+
+}
+
+.app .editor .content[name="adjust"]>.primary .adjust-buttons-wrapper>button .icon {
   width: 20px;
   height: 20px;
-  }
+}
 
 
 /* crop */
- .app .editor .content[name="crop"] .scroller{
+.app .editor .content[name="crop"] .scroller {
   scrollbar-width: none;
 }
-.app .editor .content[name="crop"] .desktop-custom-size-controler{
- display: none;
+
+.app .editor .content[name="crop"] .desktop-custom-size-controler {
+  display: none;
 }
- .app .editor .content[name="crop"] .crop-sizes-wrapper{
+
+.app .editor .content[name="crop"] .crop-sizes-wrapper {
   width: max-content;
   min-width: 100%;
   display: flex;
   flex-direction: row;
 }
- .app .editor .content[name="crop"] .crop-sizes-wrapper > button{
+
+.app .editor .content[name="crop"] .crop-sizes-wrapper>button {
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -401,105 +489,118 @@ justify-content: center;
   width: 100%;
   min-width: max-content;
 }
-.app .editor .content[name="crop"] .crop-sizes-wrapper > button:active{
- opacity: .7;
+
+.app .editor .content[name="crop"] .crop-sizes-wrapper>button:active {
+  opacity: .7;
   color: var(--color-primary);
 }
 
- .app .editor .content[name="crop"] .crop-sizes-wrapper > button.active{
- color: var(--color-primary);
+.app .editor .content[name="crop"] .crop-sizes-wrapper>button.active {
+  color: var(--color-primary);
 }
- .app .editor .content[name="crop"] .crop-sizes-wrapper > button > .icon{
+
+.app .editor .content[name="crop"] .crop-sizes-wrapper>button>.icon {
   width: 32px;
   height: 32px;
 }
 
-.app .editor   .content[name="crop"] .secondary-crop-sizes-wrapper{
+.app .editor .content[name="crop"] .secondary-crop-sizes-wrapper {
   display: none;
 }
 
 
- .app .editor .content[name="crop"] .secondary .custom-size-button{
- background-color: var(--layout-bg-color);
- border: none;
- cursor: pointer;
- display: flex;
- flex-direction: row;
- justify-content: center;
- align-items: center;
- gap: 8px;
+.app .editor .content[name="crop"] .secondary .custom-size-button {
+  background-color: var(--layout-bg-color);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
- .app .editor .content[name="crop"] .secondary .custom-size-button .icon{
+.app .editor .content[name="crop"] .secondary .custom-size-button .icon {
   width: 20px;
   height: 20px;
 
 }
+
 /* blur */
- .app .editor .content[name="blur"] > .primary{
+.app .editor .content[name="blur"]>.primary {
   width: 90%;
   display: flex;
   flex-direction: column;
   gap: 8px;
- }
-  .app .editor .content[name="blur"] > .primary  .blur-control-panel{
+}
+
+.app .editor .content[name="blur"]>.primary .blur-control-panel {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
- }
-  .app .editor .content[name="blur"] > .primary  .blur-control-panel .value-wrapper{
-   display: flex;
-   flex-direction: row;
-    gap: 10px;
-    font-size: 15px;
-    color: black;
- }
- .app .editor .content[name="blur"] > .primary  .blur-control-panel .value-wrapper > .value::after{
+}
+
+.app .editor .content[name="blur"]>.primary .blur-control-panel .value-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 15px;
+  color: black;
+}
+
+.app .editor .content[name="blur"]>.primary .blur-control-panel .value-wrapper>.value::after {
   content: " %";
   font-size: smaller;
- } 
+}
 
-  .app .editor .content[name="blur"] > .primary  .blur-control-panel .range-wrapper > input{
-   width: 100%;
- }
-  .app .editor .content[name="blur"] > .primary  .blur-type-select{
+.app .editor .content[name="blur"]>.primary .blur-control-panel .range-wrapper>input {
+  width: 100%;
+}
+
+.app .editor .content[name="blur"]>.primary .blur-type-select {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 40%;
   align-self: center;
- }
-  .app .editor .content[name="blur"] > .primary  .blur-type-select > button{
-   background-color: inherit;
-   border: none;
+}
+
+.app .editor .content[name="blur"]>.primary .blur-type-select>button {
+  background-color: inherit;
+  border: none;
   color: black;
-   cursor: pointer;    
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 3px;
- }
-  .app .editor .content[name="blur"] > .primary  .blur-type-select > button.active{
-   color: var(--color-primary);
- }
-  .app .editor .content[name="blur"] > .primary  .blur-type-select > button .icon{
- width: 20px;
- height: 20px;
- }
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.app .editor .content[name="blur"]>.primary .blur-type-select>button.active {
+  color: var(--color-primary);
+}
+
+.app .editor .content[name="blur"]>.primary .blur-type-select>button .icon {
+  width: 20px;
+  height: 20px;
+}
+
 /* rotate */
-.app .editor   .content[name="rotate"] .straighten-control-panel {
-    width: 90%; 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-.app .editor   .content[name="rotate"] .straighten-control-panel  > .desktop-header{
+.app .editor .content[name="rotate"] .straighten-control-panel {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.app .editor .content[name="rotate"] .straighten-control-panel>.desktop-header {
   display: none;
 }
-.app .editor   .content[name="rotate"] .straighten-control-panel > .header{
+
+.app .editor .content[name="rotate"] .straighten-control-panel>.header {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -507,128 +608,145 @@ justify-content: center;
   gap: 10px;
 }
 
-.app .editor   .content[name="rotate"] .straighten-control-panel  > .range-wrapper{
-    width: 100%;
-    height: 30px;
-    }
-     .app .editor   .content[name="rotate"] .straighten-control-panel  > .range-wrapper > .input{
-      width: 95%;
-      height: 100%;
-      margin:0 auto;
-      --marks-stop-height: 50%;
-      --thumb-bg-color: lightgray;
-      --thumb-border-color: var(--color-primary);
-      --runnable-track-bg-color: lightgray;
-      --completed-track-bg-color: var(--color-primary);
+.app .editor .content[name="rotate"] .straighten-control-panel>.range-wrapper {
+  width: 100%;
+  height: 30px;
+}
 
-     }
- .app .editor .content[name="rotate"] .rotate-control-panel{
+.app .editor .content[name="rotate"] .straighten-control-panel>.range-wrapper>.input {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  --marks-stop-height: 50%;
+  --thumb-bg-color: lightgray;
+  --thumb-border-color: var(--color-primary);
+  --runnable-track-bg-color: lightgray;
+  --completed-track-bg-color: var(--color-primary);
+
+}
+
+.app .editor .content[name="rotate"] .rotate-control-panel {
   width: 90%;
   display: flex;
   flex-direction: column;
 }
- .app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper{
- width: 100%;
- display: flex;
- flex-direction: row;
+
+.app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
- .app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper > button{
+
+.app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper>button {
   background-color: inherit;
   border: none;
- cursor: pointer;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- gap: 3px;
- padding: 8px;
- color: black;
- font-size: 10px;
- width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  padding: 8px;
+  color: black;
+  font-size: 10px;
+  width: 100%;
 }
- .app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper > button:active{
- color: var(--color-primary);
+
+.app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper>button:active {
+  color: var(--color-primary);
 }
- .app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper > button .icon{
+
+.app .editor .content[name="rotate"] .rotate-control-panel .buttons-wrapper>button .icon {
   width: 20px;
   height: 20px;
 }
+
 /* text */
 
-.app .editor .content[name="text"] > .ql-toolbar{
+.app .editor .content[name="text"]>.ql-toolbar {
   width: 90%;
   overflow-x: scroll;
   overflow-y: hidden;
   scrollbar-width: thin;
   padding: 0;
 
-} 
-.app .editor .content[name="text"] > .ql-toolbar > .ql-formats{
- width: max-content;
 }
-.app .editor .content[name="text"] > .ql-toolbar:not(.active){
-display: none;
+
+.app .editor .content[name="text"]>.ql-toolbar>.ql-formats {
+  width: max-content;
+}
+
+.app .editor .content[name="text"]>.ql-toolbar:not(.active) {
+  display: none;
 
 }
-.app .editor .content[name="text"] > .ql-toolbar .ql-picker .ql-picker-options{
+
+.app .editor .content[name="text"]>.ql-toolbar .ql-picker .ql-picker-options {
   height: 100%;
   overflow-y: scroll;
 }
-.app .editor .content[name="text"] > .secondary > .add-text-button{
+
+.app .editor .content[name="text"]>.secondary>.add-text-button {
   background: var(--background-primary-gradient);
- background-color: var(--color-primary);
- color: white;
- border: none;
- border-radius: 20px;
- padding: 5px;
- width: 40%;
- cursor: pointer;
- font-weight: bold;
- margin:0  auto;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px;
+  width: 40%;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 auto;
 }
-.app .editor .content[name="text"] > .secondary > .add-text-button:is(:active,.active){
- filter: brightness(.7);
+
+.app .editor .content[name="text"]>.secondary>.add-text-button:is(:active, .active) {
+  filter: brightness(.7);
 }
-.app .editor .content[name="text"] > .secondary > .add-text-button:not(.active) + .apply-button{
- display: none;
+
+.app .editor .content[name="text"]>.secondary>.add-text-button:not(.active)+.apply-button {
+  display: none;
 }
+
 /* bottom toolbar */
-.app .editor > .scroller{
+.app .editor>.scroller {
   box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
   overflow-y: hidden;
 }
+
 .app .editor .toolbar {
-    width: max-content;
-    min-width: 100%;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;  
-   align-self: flex-end;
+  width: max-content;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
   background-color: var(--layout-bg-color);
 
-  }
-  .app .editor .toolbar > button{
-    background-color: inherit;
-    border: none;
-   padding: 8px 10px;
-   font-size: 15px;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 8px;
-   color: black;
-   cursor: pointer;
-  }
-  .app .editor .toolbar > button:active{
-   background-color: var(--color-primary-tint);
-   color: var(--color-primary);
-  }
- 
+}
 
-  .app .editor .toolbar > button .icon{
-   width: 25px;
-   height: 25px;
-  }
+.app .editor .toolbar>button {
+  background-color: inherit;
+  border: none;
+  padding: 8px 10px;
+  font-size: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: black;
+  cursor: pointer;
+}
+
+.app .editor .toolbar>button:active {
+  background-color: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+
+.app .editor .toolbar>button .icon {
+  width: 25px;
+  height: 25px;
+}
