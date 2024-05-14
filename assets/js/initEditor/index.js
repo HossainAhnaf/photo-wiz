@@ -9,7 +9,7 @@ import initTextContentTab from "./utils/initTextContentTab.js"
 export default function initEditor() {
   
   const editor = document.querySelector('.app .editor');
-  const openContentButton = document.querySelector('.open-content-button');
+  const openContentButton = editor.querySelector('.show-full-container-button');
   const toolbar = document.querySelector('.app .editor .toolbar');
   const toolbarButtons = Array.from(toolbar.querySelectorAll('button'));
   const contentTabs = Array.from(editor.querySelectorAll('.content'));

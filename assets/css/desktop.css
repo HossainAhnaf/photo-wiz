@@ -1,5 +1,37 @@
 @media screen and (min-width: 750px) {
- 
+  .show-full-container-button{
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    padding: 40px 0;
+    border: none ;
+    cursor: pointer;
+    background-color: var(--layout-bg-color);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  }
+  .show-full-container-button.right{
+    right: -15px;
+    border-radius: 0 11px 11px 0;
+  }
+  .show-full-container-button.left{
+    left: -15px;
+    border-radius:  11px 0 0 11px ;
+  }
+  .show-full-container-button.left > .icon{
+    transform: rotate(90deg);
+
+  }
+  .show-full-container-button .icon{
+   width: 15px;
+   height: 15px;
+   transform: rotate(270deg);
+  }
+
+ .active > .show-full-container-button .icon{
+    transform: rotate(90deg);
+   }
+
  
   .app .app-nav{
     width: calc(100% - 40px);
@@ -105,30 +137,7 @@
       .app .editor.active{
         width: min(600px,70%);
       }
-      .app .editor .open-content-button{
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: -15px;
-        z-index: 1;
-        padding: 40px 0;
-        border-radius: 0 11px 11px 0;
-        border: none ;
-        cursor: pointer;
-        background-color: var(--layout-bg-color);
-        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-      }
- 
-      .app .editor .open-content-button .icon{
-       width: 15px;
-       height: 15px;
-       transform: rotate(270deg);
-      }
 
-      .app .editor.active .open-content-button .icon{
-        transform: rotate(90deg);
-       }
-   
   
       /* content */
   

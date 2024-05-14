@@ -164,6 +164,16 @@ height: 20px;
 .layer-control-panel>.add-layer-button-wrapper > .add-layer-button:active{
  filter: brightness(.7);
 }
+
+.show-full-container-button {
+  display: none;
+}
+/* side layer control panel */
+.app .main .side-layer-control-panel{
+  background-color: #FF9873;
+  position: relative;
+  width: 20%;
+}
 /*  mobile top toolbar */
 .app .main .mobile-top-toolbar {
   width: calc(100% - 20px);
@@ -396,9 +406,6 @@ height: 20px;
   justify-content: center;
 }
 
-.app .editor .open-content-button {
-  display: none;
-}
 
 /* content */
 .app .editor .content {
