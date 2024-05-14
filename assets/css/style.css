@@ -69,7 +69,7 @@
 /* layer control pannel*/
 .layer-control-panel {
   width: 90%;
-  height: 20%;
+  height: 90%;
   max-width: 300px;
   min-height: 300px;
   background-color: var(--layout-bg-color);
@@ -81,6 +81,7 @@
 
 .layer-control-panel>.header {
   height: calc(10% - 40px);
+  max-height: 10px;
   padding: 20px 10px;
   display: flex;
   justify-content: space-between;
@@ -97,36 +98,50 @@
 .layer-control-panel>.layer-images-wrapper {
   width: 100%;
   max-width: 250px;
-  height: 75%;
+  height: calc(100% - 20px);
   border-bottom: 1px solid lightgray;
  display: flex;
  flex-direction: column;
  justify-content: flex-start;
  align-items: center;
+ align-self: center;
+ padding: 10px 0;
 }
 .layer-control-panel>.layer-images-wrapper > .layer-image{
- width: 75%;
- height: 100px;
+ width: 80%;
+ aspect-ratio: 3 / 2;
  position: relative;
 }
 .layer-control-panel>.layer-images-wrapper > .layer-image> img{
   width: 100%;
  height: 100%;
 }
-
-.layer-control-panel>.layer-images-wrapper > .layer-image > button{
-  background-color: transparent;
-  border: none;
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
   right: 0;
   top: 0;
 }
-.layer-control-panel>.layer-images-wrapper > .layer-image >  button > svg{
-width: 25px;
-height: 25px;
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border: none;
+  cursor: pointer;
+}
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button:active{
+ filter: brightness(.7);
+}
+
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper >  button > svg{
+width: 20px;
+height: 20px;
 }
 .layer-control-panel>.add-layer-button-wrapper {
   height: 15%;
+  max-height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,6 +156,7 @@ height: 25px;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  min-width: max-content ;
 }
 .layer-control-panel>.add-layer-button-wrapper > .add-layer-button:active{
  filter: brightness(.7);
