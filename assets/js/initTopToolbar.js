@@ -1,4 +1,4 @@
-import {isCanvasBlank,isMobile} from "./app.js"
+import {isCanvasBlank,isMobile,layerControlPanel} from "./app.js"
 
 function changeCanvasImage(file){
  const fileReader = new FileReader()
@@ -19,7 +19,7 @@ function changeImageButtonClickHandler (){
 
 }
 function layerButtonClickHandler(){
- 
+ layerControlPanel.show()
 }
 export default function initTopToolbar(){
     const mobileTopToolbar = document.querySelector(".app > .main > .mobile-top-toolbar ")

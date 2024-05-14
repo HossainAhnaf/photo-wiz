@@ -86,8 +86,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid lightgray;
   font-size: 20px;
+  border-bottom: 1px solid lightgray;
+
 }
 .layer-control-panel > .header .close-button{
   width: 30px;
@@ -99,13 +100,13 @@
   width: 100%;
   max-width: 250px;
   height: calc(100% - 20px);
-  border-bottom: 1px solid lightgray;
  display: flex;
  flex-direction: column;
  justify-content: flex-start;
  align-items: center;
  align-self: center;
  padding: 10px 0;
+ gap: 15px;
 }
 .layer-control-panel>.layer-images-wrapper > .layer-image{
  width: 80%;
@@ -145,6 +146,8 @@ height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid lightgray;
+
 }
 .layer-control-panel>.add-layer-button-wrapper > .add-layer-button{
   background: var(--background-primary-gradient);
