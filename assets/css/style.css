@@ -78,7 +78,13 @@
   border-radius: 7px;
   overflow: hidden;
 }
-
+.layer-control-panel[data-mobile="false"] {
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+  min-height: unset;
+  border-radius: 0;
+}
 .layer-control-panel>.header {
   height: calc(10% - 40px);
   max-height: 10px;
@@ -95,6 +101,9 @@
   height: 30px;
   cursor: pointer;
 }
+.layer-control-panel[data-mobile="false"] > .header .close-button{
+ display: none;
+}
 
 .layer-control-panel>.layer-images-wrapper {
   width: 100%;
@@ -108,6 +117,38 @@
  padding: 10px 0;
  gap: 15px;
 }
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px var(--color-primary) dashed;
+  width: calc(80% - 4px);
+  aspect-ratio: 3 / 2;
+  color: var(--color-primary);
+ }
+ .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button:hover{
+  background-color: var(--color-primary-tint);
+ }
+ .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button > p{
+   visibility: hidden;
+   width: 0;
+   height: 0;
+   overflow: hidden;
+  transition: all 1s;
+  }
+
+ .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button:hover > p{
+   visibility: visible;
+   width: max-content;
+   height: max-content;
+ }
+
+ .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button > svg{
+  width: 50px;
+  height: 50px;
+ }
+
 .layer-control-panel>.layer-images-wrapper > .layer-image{
  width: 80%;
  aspect-ratio: 3 / 2;
@@ -126,6 +167,13 @@
   right: 0;
   top: 0;
 }
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .layer-image > .right-buttons-wrapper{
+ display: none;
+}
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .layer-image:hover > .right-buttons-wrapper{
+  display: flex;
+ }
+
 .layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button{
   background-color: rgba(0, 0, 0, 0.5);
   padding: 4px;
@@ -168,11 +216,8 @@ height: 20px;
 .show-full-container-button {
   display: none;
 }
-/* side layer control panel */
 .app .main .side-layer-control-panel{
-  background-color: #FF9873;
-  position: relative;
-  width: 20%;
+ display: none;
 }
 /*  mobile top toolbar */
 .app .main .mobile-top-toolbar {
