@@ -122,27 +122,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px var(--color-primary) dashed;
+  border: 2px black dashed;
   width: calc(80% - 4px);
   aspect-ratio: 3 / 2;
-  color: var(--color-primary);
+  cursor: pointer;
  }
  .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button:hover{
   background-color: var(--color-primary-tint);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
  }
- .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button > p{
-   visibility: hidden;
-   width: 0;
-   height: 0;
-   overflow: hidden;
-  transition: all 1s;
-  }
 
- .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button:hover > p{
-   visibility: visible;
-   width: max-content;
-   height: max-content;
- }
+
 
  .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button > svg{
   width: 50px;
