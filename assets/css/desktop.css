@@ -109,12 +109,14 @@
     background-color: #FF9873;
     position: relative;
     width: 0%;
+    max-width: 250px;
+
     transition: width .5s ;
     display: block;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5)
   }
   .app .main .side-layer-control-panel.active{
-    width: 30%;
+    width: 50%;
   }
 
     .app .preview   {

@@ -150,9 +150,9 @@
  height: 100%;
 }
 .layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper{
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content:center;
   align-items: center;
   position: absolute;
   right: 0;

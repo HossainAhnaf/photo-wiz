@@ -1,4 +1,4 @@
-import sortablejs from 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/+esm'
+import Sortablejs from 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/+esm'
 import {isMobile} from "./app.js"
 var layerControlPanel = {
     mobileRef:null,
@@ -26,7 +26,14 @@ function toggle({currentTarget}){
 
 }
 function enableDragAndDrop(layerControlPanelRef){
-  
+    const layerImagesWrapper = layerControlPanelRef.querySelector(".layer-images-wrapper")
+  console.log(layerImagesWrapper);
+   new Sortablejs(layerImagesWrapper, {
+    handle: ".right-buttons-wrapper > .move-button",
+    draggable: ".layer-image",
+    animation: 150,
+    ghostClass: 'sortable-ghost'
+  });
 }
 
 export default function initLayerControlPanel() {
