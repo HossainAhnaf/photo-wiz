@@ -157,6 +157,8 @@
   position: absolute;
   right: 0;
   top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .layer-image > .right-buttons-wrapper{
  display: none;
@@ -166,15 +168,18 @@
  }
 
 .layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   padding: 4px;
   border: none;
   cursor: pointer;
+  color: white;
 }
 .layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button:active{
  filter: brightness(.7);
 }
-
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > .lock-button.active{
+ color: var(--color-primary);
+}
 .layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper >  button > svg{
 width: 20px;
 height: 20px;

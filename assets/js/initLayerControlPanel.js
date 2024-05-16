@@ -25,13 +25,15 @@ function toggle({currentTarget}){
   }
 
 }
+function initRightButtonsWrapper(){
+
+}
 function enableDragAndDrop(layerControlPanelRef){
     const layerImagesWrapper = layerControlPanelRef.querySelector(".layer-images-wrapper")
-  console.log(layerImagesWrapper);
    new Sortablejs(layerImagesWrapper, {
     handle: ".right-buttons-wrapper > .move-button",
     draggable: ".layer-image",
-    animation: 150,
+    animation: 300,
     ghostClass: 'sortable-ghost'
   });
 }
@@ -49,7 +51,7 @@ export default function initLayerControlPanel() {
     
     enableDragAndDrop(mobileRef)
     enableDragAndDrop(desktopRef)
-
+    
     return {
         layerControlPanel: layerControlPanel, hide, show
     }
