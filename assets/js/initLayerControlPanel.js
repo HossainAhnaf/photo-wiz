@@ -1,16 +1,17 @@
+import sortablejs from 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/+esm'
 import {isMobile} from "./app.js"
 var layerControlPanel = {
-    mobile:null,
-    desktop:null
+    mobileRef:null,
+    desktopRef:null
 }
 
 
 function hide() {
-    const layerControlPanelRef = isMobile ? layerControlPanel.mobile : layerControlPanel.desktop 
+    const layerControlPanelRef = isMobile ? layerControlPanel.mobileRef : layerControlPanel.desktopRef 
     layerControlPanelRef.parentElement.classList.remove('active')
 }
 function show() {
-    const layerControlPanelRef = isMobile ? layerControlPanel.mobile : layerControlPanel.desktop 
+    const layerControlPanelRef = isMobile ? layerControlPanel.mobileRef : layerControlPanel.desktopRef 
     layerControlPanelRef.parentElement.classList.add('active')
 }
 function toggle({currentTarget}){
@@ -24,15 +25,23 @@ function toggle({currentTarget}){
   }
 
 }
+function enableDragAndDrop(layerControlPanelRef){
+  
+}
+
 export default function initLayerControlPanel() {
-    layerControlPanel.mobile = document.querySelector(".layer-control-panel[data-mobile='true']")
-    layerControlPanel.desktop = document.querySelector(".layer-control-panel[data-mobile='false']")
+    const mobileRef =  document.querySelector(".layer-control-panel[data-mobile='true']")
+    const desktopRef = document.querySelector(".layer-control-panel[data-mobile='false']")
+    layerControlPanel = {mobileRef,desktopRef}
    
-    const showFullContainerButton = layerControlPanel.desktop.parentElement.querySelector(".show-full-container-button")
-   const closeButton = layerControlPanel.mobile.querySelector('.header > .close-button ')
+    const showFullContainerButton = desktopRef.parentElement.querySelector(".show-full-container-button")
+   const closeButton = mobileRef.querySelector('.header > .close-button ')
    
     showFullContainerButton.addEventListener('click', toggle)
     closeButton.addEventListener('click', hide)
+    
+    enableDragAndDrop(mobileRef)
+    enableDragAndDrop(desktopRef)
 
     return {
         layerControlPanel: layerControlPanel, hide, show
