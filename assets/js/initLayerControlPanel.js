@@ -34,7 +34,7 @@ function enableDragAndDrop(layerControlPanelRef){
     handle: ".right-buttons-wrapper > .move-button",
     draggable: ".layer-image",
     animation: 300,
-    ghostClass: 'sortable-ghost'
+    ghostClass: 'sortable-ghost',
   });
 }
 

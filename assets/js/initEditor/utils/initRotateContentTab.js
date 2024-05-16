@@ -1,4 +1,4 @@
-function initDesktop(straightenControlPanelRef,rangeSliderWithIndicator,contentTab) {
+function initDesktop(rangeInput,straightenControlPanelRef,rangeSliderWithIndicator,contentTab) {
   const valueInput = straightenControlPanelRef.querySelector(
     ".desktop-header > input[type='number']"
   );
@@ -65,6 +65,6 @@ export default function initRotateContentTab(contentTab, toolbar) {
       contentTab.classList.remove('updated');
     toolbar.parentElement.style.display = 'unset';
   });
-  initDesktop(straightenControlPanelRef,rangeSliderWithIndicator,contentTab);
+  initDesktop(rangeInput,straightenControlPanelRef,rangeSliderWithIndicator,contentTab);
   
 }

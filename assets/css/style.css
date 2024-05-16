@@ -145,6 +145,10 @@
  aspect-ratio: 3 / 2;
  position: relative;
 }
+
+.layer-control-panel>.layer-images-wrapper > .layer-image.sortable-ghost{
+ visibility: hidden;
+}
 .layer-control-panel>.layer-images-wrapper > .layer-image> img{
   width: 100%;
  height: 100%;
