@@ -7,7 +7,6 @@ import initBlurContentTab from "./utils/initBlurContentTab.js"
 import initRotateContentTab from "./utils/initRotateContentTab.js"
 import initTextContentTab from "./utils/initTextContentTab.js"
 export default function initEditor() {
-  
   const editor = document.querySelector('.app .editor');
   const openContentButton = editor.querySelector('.show-full-container-button');
   const toolbar = document.querySelector('.app .editor .toolbar');

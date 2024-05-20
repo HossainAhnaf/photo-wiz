@@ -96,28 +96,28 @@
   border-bottom: 1px solid lightgray;
 
 }
-.layer-control-panel > .header .close-button{
+.layer-control-panel > .header .close-button {
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
-.layer-control-panel[data-mobile="false"] > .header .close-button{
- display: none;
+.layer-control-panel[data-mobile="false"] > .header .close-button {
+  display: none;
 }
 
 .layer-control-panel>.layer-images-wrapper {
   width: 100%;
   max-width: 250px;
   height: calc(100% - 20px);
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- align-items: center;
- align-self: center;
- padding: 10px 0;
- gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+  padding: 10px 0;
+  gap: 15px;
 }
-.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button{
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,37 +126,37 @@
   width: calc(80% - 4px);
   aspect-ratio: 3 / 2;
   cursor: pointer;
- }
- .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button:hover{
+}
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button:hover {
   background-color: var(--color-primary-tint);
   color: var(--color-primary);
   border-color: var(--color-primary);
- }
+}
 
 
 
- .layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button > svg{
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .drop-layer-image-button > svg {
   width: 50px;
   height: 50px;
- }
-
-.layer-control-panel>.layer-images-wrapper > .layer-image{
- width: 80%;
- aspect-ratio: 3 / 2;
- position: relative;
 }
 
-.layer-control-panel>.layer-images-wrapper > .layer-image.sortable-ghost{
- visibility: hidden;
+.layer-control-panel>.layer-images-wrapper > .layer-image {
+  width: 80%;
+  aspect-ratio: 3 / 2;
+  position: relative;
 }
-.layer-control-panel>.layer-images-wrapper > .layer-image> img{
+
+.layer-control-panel>.layer-images-wrapper > .layer-image.sortable-ghost {
+  visibility: hidden;
+}
+.layer-control-panel>.layer-images-wrapper > .layer-image> img {
   width: 100%;
- height: 100%;
+  height: 100%;
 }
-.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper{
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   position: absolute;
   right: 0;
@@ -164,29 +164,29 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .layer-image > .right-buttons-wrapper{
- display: none;
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .layer-image > .right-buttons-wrapper {
+  display: none;
 }
-.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .layer-image:hover > .right-buttons-wrapper{
+.layer-control-panel[data-mobile="false"] >.layer-images-wrapper > .layer-image:hover > .right-buttons-wrapper {
   display: flex;
- }
+}
 
-.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button{
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button {
   background-color: transparent;
   padding: 4px;
   border: none;
   cursor: pointer;
   color: white;
 }
-.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button:active{
- filter: brightness(.7);
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button:active {
+  filter: brightness(.7);
 }
-.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > .lock-button.active{
- color: var(--color-primary);
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > .lock-button.active {
+  color: var(--color-primary);
 }
-.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper >  button > svg{
-width: 20px;
-height: 20px;
+.layer-control-panel>.layer-images-wrapper > .layer-image > .right-buttons-wrapper > button > svg {
+  width: 20px;
+  height: 20px;
 }
 .layer-control-panel>.add-layer-button-wrapper {
   height: 15%;
@@ -197,27 +197,27 @@ height: 20px;
   border-top: 1px solid lightgray;
 
 }
-.layer-control-panel>.add-layer-button-wrapper > .add-layer-button{
+.layer-control-panel>.add-layer-button-wrapper > .add-layer-button {
   background: var(--background-primary-gradient);
   background-color: var(--color-primary);
   border: none;
   border-radius: 20px;
-  padding: 7px 18px; 
+  padding: 7px 18px;
   width: 50%;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  min-width: max-content ;
+  min-width: max-content;
 }
-.layer-control-panel>.add-layer-button-wrapper > .add-layer-button:active{
- filter: brightness(.7);
+.layer-control-panel>.add-layer-button-wrapper > .add-layer-button:active {
+  filter: brightness(.7);
 }
 
 .show-full-container-button {
   display: none;
 }
-.app .main .side-layer-control-panel{
- display: none;
+.app .main .side-layer-control-panel {
+  display: none;
 }
 /*  mobile top toolbar */
 .app .main .mobile-top-toolbar {
@@ -258,21 +258,21 @@ height: 20px;
 
 
 .app .main .mobile-top-toolbar button>svg {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .app .main .mobile-top-toolbar .download-button {
   background: var(--background-primary-gradient);
   background-color: var(--color-primary);
   color: white;
-  border-radius: 100%;
+  border-radius: 50%;
   padding: 4px;
 }
 
 .app .main .mobile-top-toolbar .download-button>svg {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
 }
 
 .app .main .mobile-custom-crop-size-popup {
@@ -386,17 +386,19 @@ height: 20px;
 }
 
 .app .preview #canvas {
-  width: 100%;
-  height: 100%;
   display: none;
+  left: 20px;
+  z-index: -1;
 }
 
 .app .preview #canvas.active {
   display: block;
+  border: 1px solid red;
 }
 
-.app .preview #canvas.active+.no-image-content {
+.app .preview #canvas.active + .no-image-content {
   display: none;
+
 }
 
 .app .preview .no-image-content {
@@ -405,6 +407,7 @@ height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .app .preview .no-image-content .open-image-label {
